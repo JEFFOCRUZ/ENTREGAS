@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <title>Bobinou Entregas</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="login" class="screen center">
+    <div class="login-card">
+      <div class="brand-mark">B</div>
+      <h1>BOBINOU</h1>
+      <p class="subtitle">PAINEL DE ENTREGAS</p>
+      <form id="loginForm">
+        <label for="city">Cidade</label>
+        <select id="city" required>
+          <option value="ponta_grossa">Ponta Grossa</option>
+          <option value="guarapuava">Guarapuava</option>
+        </select>
+
+        <label for="pin">PIN do entregador</label>
+        <input id="pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="••••" required />
+        <button type="submit" class="primary">ENTRAR</button>
+      </form>
+      <p id="loginError" class="error"></p>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <div>
+        <div class="header-brand">BOBINOU</div>
+        <div class="header-sub">ENTREGAS • <span id="cityLabel"></span></div>
+      </div>
+      <div class="header-actions">
+        <button id="refreshBtn" class="ghost">Atualizar</button>
+        <button id="logoutBtn" class="ghost">Sair</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="city-banner">
+        <span>Visualizando somente entregas de</span>
+        <strong id="cityBanner"></strong>
+      </section>
+
+      <section class="stats">
+        <div><strong id="countWaiting">0</strong><span>Aguardando</span></div>
+        <div><strong id="countOnRoute">0</strong><span>Em rota</span></div>
+        <div><strong id="countDone">0</strong><span>Entregues</span></div>
+      </section>
+
+      <section class="filters">
+        <button data-filter="pendentes" class="filter active">Pendentes</button>
+        <button data-filter="todos" class="filter">Todos</button>
+        <button data-filter="entregue" class="filter">Entregues</button>
+        <button data-filter="problema" class="filter">Problemas</button>
+      </section>
+
+      <div id="loading" class="notice">Carregando pedidos...</div>
+      <div id="errorBox" class="notice error hidden"></div>
+      <section id="orders" class="orders"></section>
+    </main>
+  </div>
+
+  <template id="orderTemplate">
+    <article class="order-card">
+      <div class="order-top">
+        <div>
+          <span class="order-number"></span>
+          <h2 class="customer"></h2>
+        </div>
+        <span class="status-badge"></span>
+      </div>
+
+      <div class="info-grid">
+        <div>
+          <span class="label">Endereço</span>
+          <p class="address"></p>
+        </div>
+        <div>
+          <span class="label">Contato</span>
+          <p class="phone"></p>
+        </div>
+        <div>
+          <span class="label">Pagamento</span>
+          <p class="payment"></p>
+        </div>
+        <div>
+          <span class="label">Total</span>
+          <p class="total"></p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Ver itens do pedido</summary>
+        <div class="products"></div>
+      </details>
+
+      <div class="route-actions">
+        <a class="map-link" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="whatsapp-link" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <textarea class="note" placeholder="Observação da entrega"></textarea>
+
+      <div class="status-actions">
+        <button data-status="saiu" class="action start">Saiu para entrega</button>
+        <button data-status="entregue" class="action done">Entregue</button>
+        <button data-status="problema" class="action problem">Problema</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
