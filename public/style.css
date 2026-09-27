@@ -1,0 +1,71 @@
+:root{
+  --black:#111;
+  --graphite:#202020;
+  --yellow:#f4b400;
+  --bg:#f5f5f2;
+  --white:#fff;
+  --muted:#6f6f6f;
+  --border:#deded8;
+  --danger:#b42318;
+  --ok:#176b3a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--black)}
+.hidden{display:none!important}
+.center{min-height:100vh;display:grid;place-items:center;padding:24px}
+.login-card{width:min(420px,100%);background:#fff;border-radius:22px;padding:34px;box-shadow:0 18px 50px #00000016}
+.brand-mark{width:52px;height:52px;border-radius:14px;background:var(--yellow);display:grid;place-items:center;font-weight:900;font-size:29px;margin-bottom:18px}
+h1{margin:0;font-size:30px;letter-spacing:.06em}
+.subtitle{margin:5px 0 26px;color:var(--yellow);font-weight:800;font-size:13px}
+label,.label{display:block;font-size:12px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+input,textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:14px;font-size:16px;background:#fff}
+button,.map-link,.whatsapp-link{border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:pointer;text-decoration:none;text-align:center}
+.primary{width:100%;margin-top:12px;background:var(--yellow);color:#111}
+.error{color:var(--danger)}
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#111;color:#fff;border-bottom:4px solid var(--yellow)}
+.header-brand{font-weight:900;letter-spacing:.08em;font-size:19px}
+.header-sub{font-size:10px;color:var(--yellow);font-weight:900}
+.header-actions{display:flex;gap:8px}
+.ghost{background:#292929;color:#fff;padding:9px 11px}
+main{max-width:920px;margin:0 auto;padding:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stats div{background:#fff;border:1px solid var(--border);border-radius:16px;padding:15px}
+.stats strong{display:block;font-size:25px}
+.stats span{font-size:12px;color:var(--muted);font-weight:700}
+.filters{display:flex;gap:8px;overflow:auto;margin-bottom:16px}
+.filter{white-space:nowrap;background:#e8e8e3}
+.filter.active{background:#111;color:#fff}
+.orders{display:grid;gap:14px}
+.order-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
+.order-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.order-number{font-size:12px;color:var(--muted);font-weight:800}
+.customer{margin:4px 0 12px;font-size:20px}
+.status-badge{font-size:11px;font-weight:900;border-radius:999px;padding:7px 9px;background:#eee;white-space:nowrap}
+.status-badge.saiu{background:#fff2c7}
+.status-badge.entregue{background:#dff5e7;color:var(--ok)}
+.status-badge.problema{background:#fde7e5;color:var(--danger)}
+.info-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:12px 18px}
+.info-grid p{margin:0;line-height:1.35}
+details{margin:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0}
+summary{cursor:pointer;font-weight:800}
+.product{padding:7px 0;font-size:14px}
+.route-actions,.status-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.status-actions{grid-template-columns:repeat(3,1fr)}
+.map-link{background:#111;color:#fff}
+.whatsapp-link{background:#e9f8ed;color:#166c37}
+.action{background:#ededeb}
+.action.start{background:#fff2c7}
+.action.done{background:#dff5e7;color:#135f34}
+.action.problem{background:#fde7e5;color:#9c1c14}
+.note{margin-top:12px;min-height:64px;resize:vertical}
+.notice{padding:18px;text-align:center}
+@media(max-width:640px){
+  main{padding:12px}
+  .info-grid{grid-template-columns:1fr}
+  .status-actions{grid-template-columns:1fr}
+  .route-actions{grid-template-columns:1fr 1fr}
+}
+select{width:100%;border:1px solid var(--border);border-radius:12px;padding:14px;font-size:16px;background:#fff;margin-bottom:14px}
+.city-banner{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#111;color:#fff;border-radius:16px;padding:14px 16px;margin-bottom:12px;border-left:5px solid var(--yellow)}
+.city-banner span{font-size:12px;color:#d5d5d5}
+.city-banner strong{color:var(--yellow);font-size:15px}
